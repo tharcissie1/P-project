@@ -1,0 +1,56 @@
+.custom-text{
+    color: orangered !important;
+}
+
+/* custom form button*/
+.btn-form-custom {
+  color: #fff;
+  background-color: orangered;
+  border-color: orangered;
+}
+
+.btn-form-custom:hover,
+.btn-form-custom:focus,
+.btn-form-custom:active,
+.btn-form-custom.active,
+.open .dropdown-toggle.btn-form-custom {
+  color: #ffffff;
+  background-color: orangered;
+  border-color: orangered;
+}
+
+.btn-form-custom:active,
+.btn-form-custom.active,
+.open .dropdown-toggle.btn-form-custom {
+  background-image: none;
+}
+
+.btn-form-custom.disabled,
+.btn-form-custom[disabled],
+fieldset[disabled] .btn-form-custom,
+.btn-form-custom.disabled:hover,
+.btn-form-custom[disabled]:hover,
+fieldset[disabled] .btn-form-custom:hover,
+.btn-form-custom.disabled:focus,
+.btn-form-custom[disabled]:focus,
+fieldset[disabled] .btn-form-custom:focus,
+.btn-form-custom.disabled:active,
+.btn-form-custom[disabled]:active,
+fieldset[disabled] .btn-form-custom:active,
+.btn-form-custom.disabled.active,
+.btn-form-custom[disabled].active,
+fieldset[disabled] .btn-form-custom.active {
+  background-color: orangered;
+  border-color: orangered;
+}
+
+.btn-form-custom .badge {
+  color: orangered;
+  background-color: #ffffff;
+}
+
+
+ul.nav-item{
+  list-style-type: none;
+}
+/*END Custom form button*/

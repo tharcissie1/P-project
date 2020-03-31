@@ -1,0 +1,24 @@
+{% extends "_base.html" %}
+
+{% block title %}
+
+{% endblock %}
+
+
+{% block content %}
+    <div class="container">
+        <div class="card text-center mt-2">
+          <div class="card-header">
+            COURSE: <span class="custom-text">{{ assignment.course }}</span>
+          </div>
+          <div class="card-body">
+            <h5 class="card-title">{{ assignment.title }}</h5>
+            <p class="card-text">{{assignment.description}}</p>
+            <a href="#" class="btn btn-form-custom">Submit Assignment</a>
+          </div>
+          <div class="card-footer text-danger">
+            {{ assignment.deadline }}
+          </div>
+        </div>
+    </div>
+{% endblock %}

@@ -1,0 +1,46 @@
+{% extends "_base.html" %}
+{% load static %}
+{% block title %}
+    Home - {{ block.super }}
+{% endblock %}
+{% block content %}
+<div class="container ">
+<div class="row">
+ <div class="col-md-4">
+   <div class="left-column-container">
+<div class="card-body">
+    {% if user.is_authenticated %}
+    <!-- profile -->
+    
+    <h5 class="account-heading"> Weclome {{user.username}}</h5>
+            {% else %}
+       
+          <li style="list-style-type: none;">
+            <a class="nav-link custom-text" href="{% url 'login' %}">Log In</a>
+          </li>
+        
+          {% endif %}
+</div>
+     </div>
+
+     <div class="navigation-list-container navigation-list-container-white
+      home-left-navigation"> 
+      <div class="card-body">
+       
+             
+        <ul class="list-group">
+
+          <li class="list-group-item"><a href="{% url 'cs' %}">Computer Science</li>
+            <li class="list-group-item"><a href="{% url 'is' %}">Information System</li>
+            <li class="list-group-item"><a href="{% url 'it' %}">Information Technology</li>
+            
+           
+          </ul>
+    </div>
+     </div>
+  </div>      
+</div>
+</div>
+
+{% endblock %}
+
