@@ -37,7 +37,7 @@ class UserUpdateForm(forms.ModelForm):
     #  email = forms.EmailField(widget=forms.EmailInput(attrs={'class':'form-control'}))
      class Meta:
          model = User
-         fields = ('username', 'email')
+         fields = ()
 
 #####################     creating update profile picture form     ######################
 

@@ -8,32 +8,28 @@
 {% block content %}
     <div class="container ">
       <div class="row">
-        <div class="col-md-2">
+        <div class="col-md-2 mt-4">
           <div class="left-column-container mt-4">
-          
-<div class="card bg-light p-3 mb-3 align-items-center d-flex justify-content-center" style="width: 10rem; height:8rem; border: radius 0.5rem;">
-    
-  <img class="rounded-circle " src="{{ user.profile.image.url }}"  style="height: 40px; width:35px ;" >
-     <div class="card-body text-center">
-     <h6>{{user.username}}</h6>
-     <p ><a href="{% url 'update_user' %}">View profile</a></p>
-    </div>
-  </div>       
-  </div> 
-</div>      
+            <div class="card bg-light p-3 mb-3 rounded align-items-center d-flex justify-content-center" style="width: 10rem; height:8rem; border: radius 0.5rem;">
+              <img class="rounded-circle " src="{{ user.profile.image.url }}"  style="height: 40px; width:35px ;" >
+                <div class="card-body text-center">
+                  <h6>{{user.username}}</h6>
+                  <p ><a href="{% url 'update_user' %}">View profile</a></p>
+                </div>
+            </div>       
+          </div> 
+        </div>      
  
-    <!-- <div class="row"> -->
+    
         <div class="col-md-10">
             <table class="table table-striped mt-5">
               <thead>
                 <tr class="text-justify">
-                  <th scope="col">#</th>
+                  <th scope="col">No</th>
                   <th scope="col">Title</th>
                   <th scope="col">Course</th>
-
                   <th scope="col">Date</th>
                   <th scope="col">Deadline</th>
-
                 </tr>
               </thead>
               <tbody>
@@ -42,7 +38,6 @@
                   <th scope="row">{{ object.id }}</th>
                   <td>{{ object.title }}</td>
                   <td>{{ object.course }}</td>
-
                   <td>{{ object.created_date }}</td>
                   <td>{{ object.deadline }}</td>
                     {% if object.is_past_due %}
@@ -55,7 +50,7 @@
               </tbody>
             </table>
         </div>
-    </div>
 
     </div>
+  </div>
 {% endblock %}
