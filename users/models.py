@@ -9,6 +9,7 @@ from django.db.models.signals import post_save
 class Department(models.Model):
     name = models.CharField(max_length=200)
     
+    
     class Meta:
         verbose_name = "Department"
         verbose_name_plural = "Departments"
@@ -19,12 +20,12 @@ class Department(models.Model):
 
 
 class UserAdditionInfo(models.Model):
-    user = models.OneToOneField(User, on_delete=models.CASCADE, related_query_name='userinfo')
-    department = models.ForeignKey(Department, on_delete=models.CASCADE)
+     user = models.OneToOneField(User, default=1,on_delete=models.CASCADE, related_query_name='userinfo')
+     department = models.ForeignKey(Department, on_delete=models.CASCADE)
 
 
 class Profile(models.Model):
-    user = models.OneToOneField(User, on_delete=models.CASCADE)
+    user = models.OneToOneField(User, default=1, on_delete=models.CASCADE)
     image = models.ImageField(default='default.png', upload_to='profile_pics')
 
     def __str__(self):

@@ -42,7 +42,6 @@ def update_user(request):
 
 class LoginView(LoginView):
     def form_valid(self, form):
-        # form is valid (= correct password), now check if user requires to set own password
         login(self.request, user)
         if form.get_user().change_password:
             return HttpResponseRedirect(reverse('password_change'))

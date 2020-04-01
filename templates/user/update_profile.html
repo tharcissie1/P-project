@@ -4,38 +4,26 @@
 
 <div class="container mt-4">
     <form  method="POST"  enctype="multipart/form-data">
-       
-    <div class="card-profile bg-light p-3 rounded">
+        <div class="card-profile bg-light p-3 rounded">
            <div class=" row p-3 ">
-          <div class="col-3 d-flex justify-content-center" > <img class="rounded-circle " src="{{ user.profile.image.url }}"  style="height: 150px; width:145px;" ></div>
-                      <div class="" ><h2>{{user.username}}</h2>
-                        {% csrf_token %}
-        {{ update_user_form.as_p }}
-        {{ update_profile_form.as_p }}
+
+                <div class="col-3 d-flex justify-content-center" >
+                   <img class="rounded-circle " src="{{ user.profile.image.url }}"  style="height: 150px; width:145px;" >
+               </div>
+
+               <div class="" >
+                   <h2>{{user.username}}</h2>
+                   {% csrf_token %}
+                   {{ update_user_form.as_p }}
+                   {{ update_profile_form.as_p }}
                        
-                       <button class="btn-success" type="SUBMIT" name="submit" >Update Photo</button>
-                       <h6 class='mt-4'><a href="{% url 'password_change' %}" class="text-muted">Change your Password</a></h6>
-                   </div>
-            </div>
+                  <button class="btn-success" type="SUBMIT" name="submit" >Update Photo</button>
+                  <h6 class='mt-4'><a href="{% url 'password_change' %}" class="text-muted">Change your Password</a></h6>
+               </div>
                
-
-    </div>
-    
-    
-</form>
+            </div>
+        </div>  
+   </form>
 </div>
-  
-
-<!-- <form  method="POST"  enctype="multipart/form-data">
-    {% csrf_token %}
-    {{ update_user_form.as_p }}
-    {{ update_profile_form.as_p }}
-    <img src="{{ update_profile_form.instance.image.url }}" />
-    <br />
-    <input type="SUBMIT" name="submit" value="Update"/>
-    <div class="text-center py-2"> 
-     <a href="{% url 'password_change' %}" class="text-muted">Change your Password</a>   
-    </div>
-</form> -->
 
 {% endblock %}

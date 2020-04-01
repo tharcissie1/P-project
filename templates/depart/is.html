@@ -18,19 +18,30 @@
       <tbody>
       {% for assignments in ass_is %}
         <tr>
-       <th scope="row">{{ assignments.id }}</th> 
+         <th scope="row">{{ assignments.id }}</th> 
           <td>{{ assignments.title }}</td>
           <td>{{ assignments.course }}</td> 
           <td>{{ assignments.created_date }}</td>
           <td>{{ assignments.deadline }}</td> 
-             {% if object.is_past_due %}
-                <td><a href="#" class="btn btn-secondary disabled custom-text">Overdue</a></td>
-                {%else%}
-                <td>
-                  <button onclick="myFunction()"  class="btn btn-success mr-2">View</button>
-                  <button  onclick="myFunction2()" class="btn btn-form-custom">Submit</button>
-              </td> 
-            {% endif %}
+          
+          {% if assignments.is_past_due %}
+          <td>
+            <a href="#" class="btn btn-secondary disabled custom-text">Overdue</a>
+          </td>
+          
+          {% elif user.is_authenticated %}
+           <td>
+            <a href="{% url 'assignment-detail' assignments.id %}" class="btn btn-success mr-2">View</a>
+            <a href="{% url 'submit-assignment' assignments.id %} " class="btn btn-form-custom">Submit</a>
+           </td>
+         
+          {% else %}
+          <td>
+             <button onclick="myFunction()"  class="btn btn-success mr-2">View</button>
+             <button  onclick="myFunction2()" class="btn btn-form-custom">Submit</button>
+         </td> 
+         
+         {% endif %}
         </tr>
       {% endfor %}
       </tbody>

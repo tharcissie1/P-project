@@ -8,18 +8,16 @@ from django.contrib.auth.decorators import login_required
 #from .forms import *
 
 class DashboardListView(ListView):
-    model = Assignment
-    template_name = "dashboard/dashboard.html"
+      model = Assignment
+      template_name = "dashboard/dashboard.html"
+
 
 # @login_required
 # def dashboard(request):
-#     ass = Assignment.objects.filter(user=request.user)
-#     # paginator = Paginator(article, 6) # < 3 is the number of items on each page
-#     # page = request.GET.get('page') # < Get the page number
-#     # ass = paginator.get_page(page) # < New in 2.0!
-#     data = {}
-#     data['object_list'] = ass
-#     return render(request, 'dashboard/dashboard.html',data)
+#      ass = Assignment.objects.filter(department=request.user.userinfo.department)
+#      data = {}
+#      data['object_list'] = ass
+#      return render(request, 'dashboard/dashboard.html',data)
 
 class AssignmentDetailView(DetailView):
     model = Assignment
